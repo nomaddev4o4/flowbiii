@@ -1,10 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRightCircle } from "lucide-react";
+import FlowBuilder from "@/components/flow-builder/FlowBuilder";
 
 export default function Home() {
-  return (
-    <div className="flex h-screen flex-col items-center justify-center">
-      Flow builder
-    </div>
-  );
+  return <FlowBuilder />;
 }

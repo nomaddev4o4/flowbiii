@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TopNavbar from "@/components/navigation-bar/TopNavbar";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,9 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TopNavbar />
-          {children}
+          <div className="h-[calc(100vh-64px)] overflow-auto px-6 py-3">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
