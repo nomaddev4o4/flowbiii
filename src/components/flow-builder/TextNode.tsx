@@ -11,7 +11,6 @@ export const TextNodeTypes: NodeTypes = {
 };
 
 export default function TextNode({ data }: { data: { value: string } }) {
-  console.log("TextNode component rendered");
   const [message, setMessage] = useState(data.value);
 
   const onTextChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {

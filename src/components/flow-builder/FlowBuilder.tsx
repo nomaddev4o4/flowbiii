@@ -1,5 +1,3 @@
-"use client";
-
 import { SettingsPanel } from "./SettingsPanel";
 import { SidebarProvider } from "../ui/sidebar";
 import FlowBuilderCanvas from "./Canvas";
