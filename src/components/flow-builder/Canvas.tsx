@@ -12,7 +12,7 @@ import {
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 
-import TextNode from "./TextNode";
+import { TextNode } from "./nodes";
 import { useShallow } from "zustand/shallow";
 import { useCanvasStore } from "@/store/useCanvasStore";
 import { AppNode, ICanvasStore } from "@/types/canvas-type";
@@ -51,13 +51,6 @@ export default function FlowBuilderCanvas() {
     AppNode,
     Edge
   > | null>(null);
-  // const [nodes, setNodes, onNodesChange] = useNodesState(INITIAL_NODES);
-  // const [edges, setEdges, onEdgesChange] = useEdgesState(INITIAL_EDGES);
-
-  // const onConnect = useCallback(
-  //   (params: Edge | Connection) => setEdges((edge) => addEdge(params, edge)),
-  //   [setEdges],
-  // );
 
   const onDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();

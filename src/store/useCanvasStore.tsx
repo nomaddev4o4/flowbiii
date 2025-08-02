@@ -44,7 +44,7 @@ export const useCanvasStore = create<ICanvasStore>((set, get) => ({
   validateAndSaveFlow: () => {
     const { nodes, edges } = get();
 
-    // Check for empty messages
+    // Check for nodes with empty messages
     const emptyNodes = nodes.filter(
       (node) => !node.data.value || node.data.value.trim() === "",
     );
@@ -53,7 +53,7 @@ export const useCanvasStore = create<ICanvasStore>((set, get) => ({
       return false;
     }
 
-    // Check for orphan nodes (nodes without connections)
+    // Check for nodes without connections
     if (nodes.length > 1) {
       const connectedNodeIds = new Set();
       edges.forEach((edge) => {

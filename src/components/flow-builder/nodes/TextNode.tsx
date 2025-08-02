@@ -1,7 +1,7 @@
 "use client";
 
 import { Handle, NodeProps, Position } from "@xyflow/react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import { MessageCircleMore } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MessageNode } from "@/types/canvas-type";
