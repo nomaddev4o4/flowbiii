@@ -22,6 +22,7 @@ export function SettingsPanel() {
     useCanvasStore();
 
   const handleChange = (value: string) => {
+    // Prevent exceeding character limit
     if (value.length > MAX_MESSAGE_LENGTH) {
       return;
     }

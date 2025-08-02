@@ -21,9 +21,11 @@ export const TextNodeTypes: NodeTypes = {
   message: TextNode,
 };
 
+// Simple ID generator for new nodes
 let id = 0;
 const getId = () => `n${id++}`;
 
+// Selector for the canvas store
 const selector = (state: ICanvasStore) => ({
   nodes: state.nodes,
   setNodes: state.setNodes,
@@ -66,6 +68,7 @@ export default function FlowBuilderCanvas() {
       if (typeof type === "undefined" || !type) return;
       if (!reactFlowWrapper.current || !reactFlowInstance) return;
 
+      // Convert screen coordinates to flow position
       const position = reactFlowInstance.screenToFlowPosition({
         x: e.clientX,
         y: e.clientY,
@@ -92,6 +95,7 @@ export default function FlowBuilderCanvas() {
   );
 
   const onPaneClick = useCallback(() => {
+    // Deselect node when clicking empty canvas
     setSelectedNode(null);
   }, [setSelectedNode]);
 

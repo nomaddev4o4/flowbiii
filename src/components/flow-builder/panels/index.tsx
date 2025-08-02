@@ -6,5 +6,6 @@ import { SettingsPanel } from "./SettingsPanel";
 
 export default function Panel() {
   const selectedNode = useCanvasStore((state) => state.selectedNode);
+  // Show settings panel when node is selected, otherwise show nodes panel
   return selectedNode ? <SettingsPanel /> : <NodesPanel />;
 }

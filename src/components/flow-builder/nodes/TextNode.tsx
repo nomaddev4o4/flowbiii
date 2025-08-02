@@ -28,11 +28,13 @@ export default function TextNode({ data, selected }: NodeProps<MessageNode>) {
         >
           {message?.trim() || "No message set"}
         </p>
+        {/* Output handle on the right */}
         <Handle
           type="source"
           position={Position.Right}
           className="!bg-primary !h-3 !w-3"
         />
+        {/* Input handle on the left */}
         <Handle
           type="target"
           position={Position.Left}

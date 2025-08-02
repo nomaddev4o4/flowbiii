@@ -38,6 +38,7 @@ function NodeCard({ nodeDefinition, onDragStart }: NodeCardProps) {
 
 export function NodesPanel() {
   const onDragStart = (event: React.DragEvent, nodeType: string) => {
+    // Store node type for drop handler
     event.dataTransfer.setData("application/reactflow", nodeType);
     event.dataTransfer.effectAllowed = "move";
   };
