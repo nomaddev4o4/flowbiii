@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from "react";
 import {
   Background,
   BackgroundVariant,
+  Controls,
   Edge,
   NodeTypes,
   ReactFlow,
@@ -115,7 +116,9 @@ export default function FlowBuilderCanvas() {
         onDragOver={onDragOver}
         onNodeClick={onNodeClick}
         onPaneClick={onPaneClick}
+        proOptions={{ hideAttribution: true }}
       >
+        <Controls className="text-black" />
         <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
       </ReactFlow>
     </div>

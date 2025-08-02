@@ -23,7 +23,11 @@ export default function TextNode({ data, selected }: NodeProps<MessageNode>) {
         </CardTitle>
       </CardHeader>
       <CardContent className="p-0">
-        <p className="text-muted-foreground text-sm">{message}</p>
+        <p
+          className={`text-sm break-words ${!message?.trim() ? "text-red-500" : "text-muted-foreground"}`}
+        >
+          {message?.trim() || "No message set"}
+        </p>
         <Handle
           type="source"
           position={Position.Right}

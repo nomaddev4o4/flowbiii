@@ -29,4 +29,5 @@ export interface ICanvasStore {
   selectedNode: AppNode | null;
   setSelectedNode: (node: AppNode | null) => void;
   updateSelectedNodeData: (value: string) => void;
+  validateAndSaveFlow: () => boolean;
 }
