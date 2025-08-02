@@ -1,32 +1,38 @@
 "use client";
 
-import { useCallback, useState } from "react";
 import { Handle, NodeTypes, Position } from "@xyflow/react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { Input } from "../ui/input";
 import { MessageCircleMore } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const TextNodeTypes: NodeTypes = {
   textNode: TextNode,
 };
 
-export default function TextNode({ data }: { data: { value: string } }) {
-  const [message, setMessage] = useState(data.value);
-
-  const onTextChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setMessage(e.target.value);
-  }, []);
+export default function TextNode({
+  data,
+  selected,
+}: {
+  data: { value: string };
+  selected: boolean;
+}) {
+  const message = data.value;
 
   return (
-    <Card className="w-[250px]">
-      <CardHeader>
+    <Card
+      className={cn(
+        "w-[250px] gap-2 p-4",
+        selected && "border-primary border-2",
+      )}
+    >
+      <CardHeader className="p-0">
         <CardTitle className="flex items-center gap-1">
           <MessageCircleMore className="size-4" />
           Message
         </CardTitle>
       </CardHeader>
-      <CardContent>
-        <Input value={message} onChange={onTextChange} />
+      <CardContent className="p-0">
+        <p className="text-muted-foreground text-sm">{message}</p>
         <Handle
           type="source"
           position={Position.Right}
