@@ -24,14 +24,19 @@ export function NodesPanel() {
       <CardContent>
         <Card
           draggable
-          onDragStart={(event) => onDragStart(event, "textNode")}
-          className="cursor-grab transition-shadow hover:shadow-md active:cursor-grabbing"
+          onDragStart={(event) => onDragStart(event, "message")}
+          className="cursor-grab gap-2 p-4 transition-shadow hover:shadow-md active:cursor-grabbing"
         >
-          <CardContent>
+          <CardHeader className="p-0">
             <CardTitle className="flex items-center gap-1">
               <MessageCircleMore className="size-4" />
               Message
             </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <p className="text-muted-foreground text-sm">
+              Add a new message to the canvas.
+            </p>
           </CardContent>
         </Card>
       </CardContent>

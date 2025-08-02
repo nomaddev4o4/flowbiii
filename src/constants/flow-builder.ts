@@ -1,4 +1,5 @@
-import { type Edge, type Node } from "@xyflow/react";
+import { AppNode } from "@/types/canvas-type";
+import { type Edge } from "@xyflow/react";
 
 export const INITIAL_EDGES: Edge[] = [
   {
@@ -8,17 +9,17 @@ export const INITIAL_EDGES: Edge[] = [
   },
 ];
 
-export const INITIAL_NODES: Node[] = [
+export const INITIAL_NODES: AppNode[] = [
   {
     id: "n1",
+    type: "message",
     position: { x: 100, y: 300 },
-    type: "textNode",
     data: { value: "Hii" },
   },
   {
     id: "n2",
+    type: "message",
     position: { x: 500, y: 100 },
-    type: "textNode",
     data: { value: "How are you?" },
   },
 ];

@@ -5,6 +5,6 @@ import { NodesPanel } from "./NodesPanel";
 import { SettingsPanel } from "./SettingsPanel";
 
 export default function Panel() {
-  const selectNode = useCanvasStore((state) => state.selectedNode);
-  return selectNode ? <SettingsPanel /> : <NodesPanel />;
+  const selectedNode = useCanvasStore((state) => state.selectedNode);
+  return selectedNode ? <SettingsPanel /> : <NodesPanel />;
 }

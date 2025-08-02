@@ -1,21 +1,12 @@
 "use client";
 
-import { Handle, NodeTypes, Position } from "@xyflow/react";
+import { Handle, NodeProps, Position } from "@xyflow/react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { MessageCircleMore } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { MessageNode } from "@/types/canvas-type";
 
-export const TextNodeTypes: NodeTypes = {
-  textNode: TextNode,
-};
-
-export default function TextNode({
-  data,
-  selected,
-}: {
-  data: { value: string };
-  selected: boolean;
-}) {
+export default function TextNode({ data, selected }: NodeProps<MessageNode>) {
   const message = data.value;
 
   return (
